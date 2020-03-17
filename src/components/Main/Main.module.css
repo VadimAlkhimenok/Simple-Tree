@@ -1,0 +1,9 @@
+.Main {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(243, 247, 246);
+    border-radius: 10px;
+    padding-bottom: 20px;
+}

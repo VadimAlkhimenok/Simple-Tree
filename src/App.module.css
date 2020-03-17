@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(0,0,0,0.8606793059020483) 0%, rgba(180,204,228,0.7290266448376226) .1%);
+}
