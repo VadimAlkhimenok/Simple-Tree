@@ -6,19 +6,19 @@ import CreateTree from '../CreateTree/CreateTree';
 export default class Text extends Component {
 
     state = [
-        { name: 'Root', isLeaf: true, id: 1, list: true,
+        { name: 'Root', isLeaf: true, id: 1, list: false,
             nodes: [
                 { name: 'Child 1', isLeaf: false, id: 2, },
                 { name: 'Child 2', isLeaf: false, id: 3, },
-                { name: 'Child 3', isLeaf: true, id: 4, list: true,
+                { name: 'Child 3', isLeaf: true, id: 4, list: false,
                     nodes: [
-                        { name: 'GrandChild', isLeaf: false, id: 5, },
+                        { name: 'GrandChild', isLeaf: false, id: 5 },
                     ],
                 },
             ],      
         },
     ];  
-
+    
     render() {
         return (
             <div className={ classes.Text }>                

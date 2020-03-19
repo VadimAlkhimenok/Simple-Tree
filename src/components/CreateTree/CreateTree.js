@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-
+import classes from './CreateTree.module.css';
 
 export default class CreateTree extends Component {
-  
-  handleChangePlus = () => {
-     this.setState( state => {
-       return { state: this.props.nodes[0].list = false }
-     })
-  }   
 
   render() {
 
@@ -15,30 +9,35 @@ export default class CreateTree extends Component {
       <>
         {
           this.props.nodes.map( node => (
-              
-              <ul 
-                  key={node.id} 
-                  style={{ paddingLeft: '30px' }}
-              >
-
-                { node.isLeaf ? <span onClick={ () => this.handleChange() }>+ {node.name}</span> : <li>{ node.name }</li> }
-
+            
+            <ul key={ node.id } className={ classes.TreeUl }>
+              <>
                 { 
-                  node.list
-                  ? <>{ node.nodes && node.nodes.length ? <CreateTree nodes={ node.nodes } /> : null }</>
-                  : null
+                  node.list 
+                  ?
+                  <li key={ node.id }> 
+                    <>{ node.list 
+                      ? <span className={ classes.Change } onClick={ state => this.setState({ state: node.list = false }) }>- {node.name}</span> 
+                      : <span>{ node.name }</span> }
+                    </>
+                    <>{ node.nodes && node.nodes.length 
+                      ? <CreateTree nodes={ node.nodes } /> 
+                      : null }
+                    </>      
+                  </li> 
+                  : 
+                  <>{ node.nodes && node.nodes.length 
+                    ? <li><span className={ classes.Change } onClick={ state => this.setState({ state: node.list = true }) }>+ { node.name }</span></li> 
+                    : <li className={ classes.TreeLi }>{ node.name }</li> }
+                  </>
                 }
-
-              </ul>
-
+              </>
+            </ul>
           ) )
-
         }
       </>
     );
-  }
 
-}
+  };
 
-
-// { node.list ? <span onClick={ () => this.handleChangePlus() }>+ {node.name}</span> : <span onClick={ () => this.handleChangeMinus() }>- {node.name}</span> }
+};

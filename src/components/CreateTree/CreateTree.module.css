@@ -1,0 +1,15 @@
+.TreeUl {
+    padding-left: 30px;
+    list-style: none;
+    /* color: rgb(74, 74, 100); */
+    font-size: 25px;
+}
+
+.TreeLi {
+    color: rgb(54, 54, 71);
+}
+
+.Change:hover {
+    color: rgb(80, 80, 139);
+    cursor: pointer;
+}
